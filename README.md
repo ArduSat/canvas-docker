@@ -7,6 +7,8 @@
 
 **docker-canvas** aims to provide a simple, disposable, containerized Canvas instance for fast(ish) integration testing of LTI applications.
 
+Note: See [ARDUSAT_SETUP.md](ARDUSAT_SETUP.md) for Ardusat-specific setup instructions.
+
 ## Prerequisites
 
 * [docker](https://www.docker.com/) (developed & tested w/ v1.12.1)
