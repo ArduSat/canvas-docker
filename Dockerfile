@@ -10,7 +10,7 @@ RUN apt-get update \
     && apt-get -y install curl software-properties-common \
     && add-apt-repository -y ppa:brightbox/ruby-ng \
     && apt-get update \
-    && apt-get install -y ruby2.1 ruby2.1-dev supervisor redis-server \
+    && apt-get install -y ruby2.3 ruby2.3-dev supervisor redis-server \
         zlib1g-dev libxml2-dev libxslt1-dev libsqlite3-dev postgresql \
         postgresql-contrib libpq-dev libxmlsec1-dev curl make g++ git
 
@@ -54,6 +54,9 @@ COPY assets/outgoing_mail.yml config/outgoing_mail.yml
 RUN for config in amazon_s3 delayed_jobs domain file_store security external_migration \
        ; do cp config/$config.yml.example config/$config.yml \
        ; done
+
+# Silence warnings about running bundler as root
+RUN $GEM_HOME/bin/bundle config --global silence_root_warning 1
 
 RUN $GEM_HOME/bin/bundle install --without="mysql"
 

@@ -32,13 +32,20 @@ sudo apt-get update
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 sudo apt-get update
-sudo apt-get install -y docker-engine
+sudo apt-get install -y docker-engine git-core
 
 [Setup Instruction Source](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 
 # Install Canvas
 
-sudo docker run -d --name=canvas -p 3000:3000 -e EMAIL_DELIVERY_METHOD=smtp -e SMTP_ADDRESS=smtp.mandrillapp.com -e SMTP_PORT=587 -e SMTP_USER=<MANDRILL_USER> -e SMTP_PASS=<MANDRILL_API_KEY> ADMIN_EMAIL=duane@ardusat.com ADMIN_PASSWORD=canvas ADMIN_ACCOUNT=Ardusat
+```
+git clone git@github.com:ArduSat/canvas-docker.git
+cd canvas-docker
+
+docker build -t ardusat/canvas .
+
+sudo docker run -d --name=canvas -p 3000:3000 -e EMAIL_DELIVERY_METHOD=smtp -e SMTP_ADDRESS=smtp.mandrillapp.com -e SMTP_PORT=587 -e SMTP_USER=<MANDRILL_USER> -e SMTP_PASS=<MANDRILL_API_KEY> ardusat/canvas
+```
 
 Note: get the MANDRILL_USER and MANDRILL_API_KEY from app config, such as `heroku config -a ardusat-lessons`
 
