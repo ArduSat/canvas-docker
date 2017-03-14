@@ -12,5 +12,3 @@ sed -i "s/CANVAS_OUTGOING_ADDRESS/${CANVAS_OUTGOING_ADDRESS-canvas@example.edu}/
 sed -i "s/CANVAS_DOMAIN/${CANVAS_DOMAIN-example.edu}/" /opt/canvas/canvas-lms/config/outgoing_mail.yml
 
 sed -i "s/CANVAS_DOMAIN/${CANVAS_DOMAIN-example.edu}/" /opt/canvas/canvas-lms/config/domain.yml
-
-bash -il
