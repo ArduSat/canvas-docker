@@ -5,6 +5,6 @@ development:
   user_name: "SMTP_USER"
   password: "SMTP_PASS"
   domain: "CANVAS_DOMAIN"
-  outgoing_address: "CANVAS_OUTGOING_EMAIL"
+  outgoing_address: "CANVAS_OUTGOING_ADDRESS"
   default_name: "Instructure Canvas"
   openssl_verify_mode: "none"
