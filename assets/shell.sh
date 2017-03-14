@@ -11,4 +11,4 @@ sed -i "s/SMTP_PASS/${SMTP_PASS-}/" /opt/canvas/canvas-lms/config/outgoing_mail.
 sed -i "s/CANVAS_OUTGOING_ADDRESS/${CANVAS_OUTGOING_ADDRESS-canvas@example.edu}/" /opt/canvas/canvas-lms/config/outgoing_mail.yml
 sed -i "s/CANVAS_DOMAIN/${CANVAS_DOMAIN-example.edu}/" /opt/canvas/canvas-lms/config/outgoing_mail.yml
 
-exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+bash -il
