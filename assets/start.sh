@@ -2,6 +2,6 @@
 
 set -e
 
-/opt/canvas/start.sh
+/opt/canvas/setenv.sh
 
 exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
