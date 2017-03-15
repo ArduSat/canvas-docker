@@ -22,8 +22,8 @@ sudo apt-get install -y docker-engine git-core
 ```
 git clone https://github.com/ArduSat/canvas-docker.git
 cd canvas-docker
-docker build -t ardusat/canvas-docker .
-docker run --name canvas -p 80:3000 -d \
+sudo docker build -t ardusat/canvas-docker .
+sudo docker run --name canvas -p 80:3000 -d \
   -e EMAIL_DELIVERY_METHOD=smtp \
   -e SMTP_ADDRESS=smtp.mandrillapp.com \
   -e SMTP_PORT=587 \
